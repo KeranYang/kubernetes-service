@@ -1,6 +1,7 @@
 package main.java.controller;
 
 import main.java.model.Asset;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ public class AssetController {
         this.assetMap.put("2", new Asset("2","namespace1", "cluster1"));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000") // allow local backstage application to access the APIs.
     @GetMapping(value = "/getResources/{assetId}", produces = "application/json")
     public Asset getResources(@PathVariable String assetId) {
         return assetMap.get(assetId);
