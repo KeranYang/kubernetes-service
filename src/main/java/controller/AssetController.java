@@ -17,6 +17,7 @@ public class AssetController {
         this.assetMap = new HashMap<>();
         this.assetMap.put("1", new Asset("1","namespace1", "cluster1"));
         this.assetMap.put("2", new Asset("2","namespace1", "cluster1"));
+        this.assetMap.put("numaflow-assets-1", new Asset("numaflow-assets-1","default", "odl-test-cluster"));
     }
 
     @CrossOrigin(origins = "http://localhost:3000") // allow local backstage application to access the APIs.
